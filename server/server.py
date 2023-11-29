@@ -13,7 +13,6 @@ def members():
 @app.route('/register', methods=['POST'])
 def register():
     req = request.get_json()
-    print(req)
     cursor.execute("SELECT * FROM users WHERE email = %s", ( req['email'], ))
     conn.commit()
     resp_user = cursor.fetchone()
@@ -24,6 +23,30 @@ def register():
         return {"Message": "Success"}
     
     return {"Message": "User already exists"}
+
+@app.route('/login', methods=['POST'])
+def login():
+    req = request.get_json()
+    cursor.execute("SELECT * FROM users WHERE email = %s", ( req['email'], ))
+    conn.commit()
+    resp_user = cursor.fetchone()
+    if resp_user is None:
+        return {"Message": "User not found"}
+    return {
+        "Message": "Success",
+        "name": resp_user[1],
+        "surname": resp_user[2],
+        "email": resp_user[3],
+        "tel": resp_user[5]
+    }
+
+@app.route('/delete_user', methods=['POST'])
+def delete_user():
+    email = request.get_json()['email']
+    cursor.execute("DELETE FROM users WHERE email = %s", (email,))
+    conn.commit()
+    return "Done!"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
