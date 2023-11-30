@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, send_file
 import psycopg2 as psg
 
 conn = psg.connect(database="delivery_base", user='postgres', password='1234')
@@ -46,6 +46,25 @@ def delete_user():
     cursor.execute("DELETE FROM users WHERE email = %s", (email,))
     conn.commit()
     return "Done!"
+
+@app.route('/products')
+def products():
+    cursor.execute("SELECT * FROM products")
+    conn.commit()
+    data = []
+    for i in cursor.fetchall():
+        card = dict()
+        card["id"] = i[0]
+        card["title"] = i[1]
+        card["price"] = i[2]
+        card["image"] = i[3]
+        card["description"] = i[4]
+        data.append(card)
+    return data
+
+@app.route('/img/<image>')
+def get_image(image):
+    return send_file('images/' + image)
 
 
 if __name__ == '__main__':
