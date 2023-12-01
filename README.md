@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Delivery
+**Техническое задание на разработку службы доставки**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**1.Обзор проекта**
 
-## Available Scripts
+Цель проекта создание веб интерфейса для организации доставки. Пользователи должны иметь возможность заказать доставку через веб интерейс, а так же просматривать избранные товары. А администратор имеет возможность работать с товарами
 
-In the project directory, you can run:
+**2.Функциональные требования**
 
-### `npm start`
+2.1. Регистрация и аутенфикация пользователей
+- Пользователи должны иметь возможность регистрироваться и входить в систему.
+- Для аутентификации нужно ввести номер телефона, пароль, email, имя, фамилия.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2.2. Заказ Доставки
+- Пользователи должны иметь возможность заказать доставку, указав место прибытия, место назначения и время.
+- Администраторы должны иметь возможности удалять не нужные товары или добавлять их
+- Система должна автоматически подбирать время прибытия товара.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2.3 Телеграм бот
+- Пользователи должны иметь возможность просмотреть статус их заказов в телеграм боте
 
-### `npm test`
+**3. Нефункциональные требования**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3.1. Безопасность
 
-### `npm run build`
+- Все данные пользователей должны быть защищены и храниться в безопасном месте.
+- Система должна защищаться от SQL-инъекций и других типов атак.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3.2. Интерфейс
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Интерфейс должен быть простым и интуитивно понятным, чтобы пользователи могли легко находить нужную информацию.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**4. Технологический стек**
 
-### `npm run eject`
+- Python
+- React
+- PostgreSQL
+- HTML
+- SCSS (препроцессор css)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**5. Порядок разработки**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5.1. Разработка архитектуры
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Определить базу данных и ее структуру.
+- Разработать структуру проекта.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5.2. Разработка функционала
 
-## Learn More
+- Реализовать регистрацию и аутентификацию пользователей.
+- Реализовать магазин товаров.
+- Реализовать просмотр товаров добавленных в корзину.
+- Реализовать возможность заказа корзины.
+- Реализовать телеграм бота
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5.3. Тестирование
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Протестировать все функции на наличие ошибок.
+- Протестировать систему на наличие уязвимостей.
 
-### Code Splitting
+**6. Ответственные лица**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Руководитель проекта – <!-- тут сам -->
 
-### Analyzing the Bundle Size
+**7 Заключение**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Проект "Служба Доставки" - это веб-сервис, который позволяет пользователям заказывать доставку, просматривать статус заказов, а администраторы работать с товарами сайта.
