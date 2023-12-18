@@ -1,5 +1,5 @@
 ### UPDATE!!!
-свой проект я залил н гит хаб другого пользователя - https://github.com/Seregungero/Kursach.git
+свой проект я залил на гит хаб другого пользователя - https://github.com/Seregungero/Kursach.git
 
 # Delivery
 **Техническое задание на разработку службы доставки**
